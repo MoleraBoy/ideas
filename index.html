@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Área de Testes</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md rounded-0">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-exclamation-triangle icone"></i>
+      </a>
+    </nav>
+
+    <section id="section1" class="container-fluid">
+      <form id="calculadora-form">
+        <div class="form-group conteudo-centralizado">
+          <h1>Quanto tempo tenho que aguentar isso?</h1>
+          <label for="data-evento">Data de término do evento:</label>
+          <input type="date" id="data-evento" class="form-control" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="considerar-feriados"
+            >Considerar finais de semana e feriados:</label
+          >
+          <select id="considerar-feriados" class="form-control">
+            <option value="sim">Sim</option>
+            <option value="nao">Não</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular</button>
+        <div id="resultado-container">
+          <div id="resultado"></div>
+        </div>
+      </form>
+    </section>
+
+    <section id="section2">
+      <div>
+        <h1 class="sessao-2">Sessão 2</h1>
+      </div>
+    </section>
+
+    <div id="floating-button" onclick="toggleColors()">
+      <i class="fas fa-lightbulb" id="lightbulb-icon"></i>
+    </div>
+
+    <section id="section3" class="container-fluid">
+      <h1>Sessão 3</h1>
+    </section>
+
+    <div id="footer" class="container-fluid">
+      © 2023 Matheus Brandão. Todos os direitos reservados.
+    </div>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <script>
+      var button = document.getElementById("floating-button");
+      var icon = document.getElementById("lightbulb-icon");
+      var colorsChanged = false;
+
+      button.addEventListener("click", function () {
+        if (!colorsChanged) {
+          button.classList.add("active");
+          colorsChanged = true;
+        } else {
+          button.classList.remove("active");
+          colorsChanged = false;
+        }
+      });
+    </script>
+    <script>
+      var lightbulbIcon = document.getElementById("lightbulb-icon");
+      var section1 = document.getElementById("section1");
+      var section2 = document.getElementById("section2");
+      var section3 = document.getElementById("section3");
+      var navbarBrand = document.querySelector(".navbar-brand");
+      var navbar = document.querySelector(".navbar");
+      var lightbulbIcon = document.getElementById("lightbulb-icon");
+      var exclamationIcon = document.querySelector(".icone");
+
+      var isIconActive = false;
+
+      var isIconActive = false;
+
+      lightbulbIcon.addEventListener("click", function () {
+        isIconActive = !isIconActive;
+
+        if (isIconActive) {
+          section1.style.backgroundColor = "black";
+          section1.style.color = "white";
+          section1.style.textShadow = "0 0 5px rgba(255, 255, 255, 0.8)";
+
+          section2.style.backgroundColor = "black";
+          section2.style.color = "white";
+          section2.style.textShadow = "0 0 5px rgba(255, 255, 255, 0.6)";
+
+          section3.style.backgroundColor = "black";
+          section3.style.color = "white";
+          section3.style.textShadow = "0 0 5px rgba(255, 255, 255, 0.8)";
+
+          navbar.style.backgroundColor = "#ffaa00";
+          exclamationIcon.style.color = "black";
+        } else {
+          section1.style.backgroundColor = "";
+          section1.style.color = "";
+          section1.style.textShadow = "";
+
+          section2.style.backgroundColor = "";
+          section2.style.color = "";
+          section2.style.textShadow = "";
+
+          section3.style.backgroundColor = "";
+          section3.style.color = "";
+          section3.style.textShadow = "";
+
+          navbar.style.backgroundColor = "";
+          exclamationIcon.style.color = "";
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

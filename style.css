@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #ffffff;
+  border-radius: 25px;
+}
+
+.navbar-brand i {
+  margin-right: 5px;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#section1 {
+  background-color: #ffaa00;
+}
+
+#section2 {
+  background-image: url('img01.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+
+.sessao-2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+#section3 {
+  background-color: #ffaa00;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.icone{
+  font-size: 50px;
+  color: #ffaa00;
+}
+
+#floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: 9999;
+}
+
+#floating-button i {
+  color: #ffaa00;
+  font-size: 24px;
+  line-height: 60px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#floating-button.active {
+  background-color: white;
+}
+
+#floating-button.active i {
+  color: black;
+}
+
+#resultado-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* Define a altura do contêiner como a altura da janela de visualização */
+}
