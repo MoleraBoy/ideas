@@ -25,7 +25,7 @@ section {
 }
 
 #section2 {
-  background-image: url('img01.jpeg');
+  background-image: url("img01.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -37,6 +37,8 @@ section {
 .sessao-2 {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 #section3 {
@@ -53,7 +55,7 @@ section {
   padding: 10px 0;
 }
 
-.icone{
+.icone {
   font-size: 50px;
   color: #ffaa00;
 }
@@ -87,9 +89,14 @@ section {
   color: black;
 }
 
-#resultado-container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh; /* Define a altura do contêiner como a altura da janela de visualização */
+  height: 100vh;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
 }

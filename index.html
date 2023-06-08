@@ -18,11 +18,11 @@
       </a>
     </nav>
 
-    <section id="section1" class="container-fluid">
+    <section id="section1" class="container-fluid text-center">
       <form id="calculadora-form">
         <div class="form-group conteudo-centralizado">
-          <h1>Quanto tempo tenho que aguentar isso?</h1>
-          <label for="data-evento">Data de término do evento:</label>
+          <h1 class="pb-5">Quanto tempo tenho que aguentar isso?</h1>
+          <label class="pt-5" for="data-evento">Data de término do evento:</label>
           <input type="date" id="data-evento" class="form-control" required />
         </div>
 
@@ -43,8 +43,10 @@
     </section>
 
     <section id="section2">
-      <div>
-        <h1 class="sessao-2">Sessão 2</h1>
+      <div class="container sessao-2">
+        <div id="image-container">
+          <img id="dog-image" class="img-fluid img-card" src="" />
+        </div>
       </div>
     </section>
 
@@ -130,6 +132,57 @@
           exclamationIcon.style.color = "";
         }
       });
+    </script>
+    <script>
+      function fetchRandomDogImage() {
+        fetch("https://dog.ceo/api/breeds/image/random")
+          .then((response) => response.json())
+          .then((data) => {
+            const imageUrl = data.message;
+            document.getElementById("dog-image").src = imageUrl;
+          })
+          .catch((error) => {
+            console.error("Erro ao obter imagem:", error);
+          });
+      }
+
+      // Definir opacidade de 80% para a imagem
+      function setOpacity() {
+        const image = document.getElementById("dog-image");
+        image.style.opacity = 0.8;
+      }
+
+      // Definir opacidade de 100% quando o mouse for passado por cima da imagem
+      function setOpacityOnHover() {
+        const image = document.getElementById("dog-image");
+        image.addEventListener("mouseover", function () {
+          image.style.opacity = 1;
+        });
+        image.addEventListener("mouseout", function () {
+          image.style.opacity = 0.8;
+        });
+      }
+
+      // Carregar uma foto aleatória quando a página for carregada
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchRandomDogImage();
+        setOpacity();
+        setOpacityOnHover();
+      });
+
+      // Definir tamanho fixo de 500px para a imagem
+      function setFixedImageSize() {
+        const image = document.getElementById("dog-image");
+        image.style.width = "500px";
+        image.style.height = "500px";
+      }
+
+      // Carregar uma nova foto quando o usuário clicar na foto existente
+      document
+        .getElementById("image-container")
+        .addEventListener("click", function () {
+          fetchRandomDogImage();
+        });
     </script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
